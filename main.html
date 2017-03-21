@@ -1,9 +1,9 @@
 
 
 <body>
-<h1>Реализация поиска введенного текста в списке</h1>
-<p>Если нашел - display:block<br>Если нет - display:none.</p>
-                  <input  id="input" class="input_us" placeholder="Введите название системы" type="text">
+<h1>Р РµР°Р»РёР·Р°С†РёСЏ РїРѕРёСЃРєР° РІРІРµРґРµРЅРЅРѕРіРѕ С‚РµРєСЃС‚Р° РІ СЃРїРёСЃРєРµ</h1>
+<p>Р•СЃР»Рё РЅР°С€РµР» - display:block<br>Р•СЃР»Рё РЅРµС‚ - display:none.</p>
+                  <input  id="input" class="input_us" placeholder="Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ СЃРёСЃС‚РµРјС‹" type="text">
 
 
 <div id='system_list' class="systems">
@@ -18,9 +18,9 @@
 
 <script>
 window.onload = function() 
-{//onload begin
-      var inp = document.getElementById('input');  // поле ввода для поиска по системе
-      var find = function() // функция для поиска в списке систем
+{//onload begin11
+      var inp = document.getElementById('input');  // РїРѕР»Рµ РІРІРѕРґР° РґР»СЏ РїРѕРёСЃРєР° РїРѕ СЃРёСЃС‚РµРјРµ
+      var find = function() // С„СѓРЅРєС†РёСЏ РґР»СЏ РїРѕРёСЃРєР° РІ СЃРїРёСЃРєРµ СЃРёСЃС‚РµРј
       {//find begin
             var parent = document.getElementById('system_list');
             var divs = parent.getElementsByTagName('div');
@@ -29,7 +29,7 @@ window.onload = function()
             for (var i = 0; i < len; i++) 
             {//for begin
                   if (divs[i].innerText.toLowerCase().search(inp.value.toLowerCase()) < 0 ) 
-                  {//если элемент не равен вводу, то скрываем
+                  {//РµСЃР»Рё СЌР»РµРјРµРЅС‚ РЅРµ СЂР°РІРµРЅ РІРІРѕРґСѓ, С‚Рѕ СЃРєСЂС‹РІР°РµРј
                         divs[i].style.display = 'none'; 
                   }
                   else 
@@ -41,7 +41,7 @@ window.onload = function()
                   }
             }//for end
       }//find end
-      inp.onkeyup = function() {  // отлавливаем событие ввода в инпуте
+      inp.onkeyup = function() {  // РѕС‚Р»Р°РІР»РёРІР°РµРј СЃРѕР±С‹С‚РёРµ РІРІРѕРґР° РІ РёРЅРїСѓС‚Рµ
             find();
       }
 }
