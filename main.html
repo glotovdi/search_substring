@@ -1,0 +1,48 @@
+
+
+<body>
+<h1>Реализация поиска введенного текста в списке</h1>
+<p>Если нашел - display:block<br>Если нет - display:none.</p>
+                  <input  id="input" class="input_us" placeholder="Введите название системы" type="text">
+
+
+<div id='system_list' class="systems">
+<div>qwacace</div>
+<div>qwweqece</div>
+<div>qwe</div>
+
+
+
+</body>
+
+
+<script>
+window.onload = function() 
+{//onload begin
+      var inp = document.getElementById('input');  // поле ввода для поиска по системе
+      var find = function() // функция для поиска в списке систем
+      {//find begin
+            var parent = document.getElementById('system_list');
+            var divs = parent.getElementsByTagName('div');
+            len = divs.length;
+
+            for (var i = 0; i < len; i++) 
+            {//for begin
+                  if (divs[i].innerText.toLowerCase().search(inp.value.toLowerCase()) < 0 ) 
+                  {//если элемент не равен вводу, то скрываем
+                        divs[i].style.display = 'none'; 
+                  }
+                  else 
+                  {
+                        if (divs[i].style.display != 'block') 
+                        {
+                              divs[i].style.display = 'block';
+                        }
+                  }
+            }//for end
+      }//find end
+      inp.onkeyup = function() {  // отлавливаем событие ввода в инпуте
+            find();
+      }
+}
+</script>
